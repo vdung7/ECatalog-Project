@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-     <item 
-        android:id="@+id/addContent"
-        android:icon="@drawable/content_new_event"
-        android:title="@string/addMenuItem2"
-        android:showAsAction="always|withText"
-        />
-</menu>
