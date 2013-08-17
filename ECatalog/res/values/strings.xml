@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ECatalog</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="addMenuItem">New Product</string>
+    <string name="addMenuItem2">New Content</string>
+    <string name="addImgCameraMenuItem">Add IMG</string>
+    <string name="addImgGalleryMenuItem">Del IMG</string>
+    
+    <!-- main title -->
+    <string name="MainTitle">ECATALOG 3</string>
+    
+    <!-- in delete dialog  -->
+    <string name="titleDeleteDialog">Delete Confirm</string>
+    <string name="messageDeleteProductDialog">This product will be removed. Are you sure?</string>
+    <string name="messageDeleteContentDialog">This content will be removed. Are you sure?</string>
+    <string name="messageDeleteImgDialog">This image will be removed. Are you sure?</string>
+        
+    <!-- in detail view -->
+    <string name="pCodeName">Code Name</string>
+    <string name="pName">Name</string>
+    <string name="pPrice">Price</string>
+    <string name="pQuantity">Quantity</string>
+    <string name="pDetail">Detail</string>
+    
+    <!-- in product_menu -->
+    <string name="moveTitle">Move by ID</string>
+    <string name="newPfromCamera">New Product from Camera</string>
+    <string name="newPfromGallery">New Product from Gallery</string>
+</resources>
