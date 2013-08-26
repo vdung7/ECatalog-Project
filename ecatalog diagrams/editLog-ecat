@@ -1,0 +1,23 @@
+----------- CHANGES -------------------
+- changing Enter Key to "Next" on the soft Keyboard
+- after back from cameraIntent return ProductListActivity
+
+- changeable name of contents
+- thêm border cho các ô content
+- translate into Vietnamese
+- changing app icon
+- button save trong detailView update cho kịp vs thay đổi của rows
+- use clickListener in listRow
+- improve image quality in detailView
+- auto rotate hình theo chìu ngang
+- lock "auto rotation" of device
+- add help button ( on ActionBar, next to AddContent Button)
+- change textView, editText of DetailView ( more comfort) 
+- change STAR symbol (HOT product)
+
+
+- change DB structure
+- change detailView to new DB structure (1 product-many pictures)
+- can view pictures in detailview better (analog gallery)
+- reseach and analyze function relate with Facebook
+- research for apply master/detailview template into app
