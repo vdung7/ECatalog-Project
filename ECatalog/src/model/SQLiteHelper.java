@@ -94,7 +94,6 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 		while(c2.moveToNext()){
 			result.addImagePath(c2.getString(c2.getColumnIndex(IMGPATH)));
 		}
-		
 		return result;
 	}
 	
@@ -122,7 +121,6 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 			
 			list.add(result);
 		}
-		
 		return list;
 	}
 	

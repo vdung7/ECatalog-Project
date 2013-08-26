@@ -267,11 +267,6 @@ public class DetailViewActivity extends Activity{
 	private void takePic() {
 		//start intent for camera (to take an image)
 		Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		if  (android.provider.Settings.System
-				.getInt(getContentResolver(),Settings.System.ACCELEROMETER_ROTATION, 0) == 1){
-			android.provider.Settings.System
-			.putInt(getContentResolver(),Settings.System.ACCELEROMETER_ROTATION, 0);
-		}
 		startActivityForResult(cameraIntent, TAKE_PIC);
 	}
 
@@ -306,12 +301,6 @@ public class DetailViewActivity extends Activity{
 				
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
-			}
-			
-			if  (android.provider.Settings.System
-					.getInt(getContentResolver(),Settings.System.ACCELEROMETER_ROTATION, 0) == 0){
-				android.provider.Settings.System
-				.putInt(getContentResolver(),Settings.System.ACCELEROMETER_ROTATION, 1);
 			}
 		}
 
