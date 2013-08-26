@@ -2,26 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bacgroud"
-    android:orientation="vertical">
-    
-    <TextView 
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
         android:text="@string/MainTitle"
         android:textSize="50dip"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:gravity="center"
-        />
+        android:textStyle="bold" />
 
-    <GridView 
+    <GridView
         android:id="@+id/ContentsGridView"
-        android:numColumns="3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:gravity="center"
         android:horizontalSpacing="5dp"
-        android:verticalSpacing="5dp"
-        ></GridView>
-    
+        android:numColumns="3"
+        android:verticalSpacing="5dp" >
+    </GridView>
+
 </LinearLayout>
