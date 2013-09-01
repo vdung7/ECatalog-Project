@@ -1,19 +1,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item 
-        	android:id="@+id/camera"
-        	android:title="@string/newPfromCamera"
-          	android:icon="@drawable/device_access_camera"
-          	android:showAsAction="ifRoom" 
-          	/>
-    <item 
-        	android:id="@+id/browser"
-        	android:title="@string/newPfromGallery"
-          	android:icon="@drawable/collections_collection"
-          	android:showAsAction="ifRoom"/>
-    <item 
-	        android:id="@+id/move"
-	        android:title="@string/moveTitle"
-			android:icon="@drawable/navigation_forward"
-	        android:showAsAction="ifRoom"
-        />
+
+    <item
+        android:id="@+id/camera"
+        android:icon="@drawable/device_access_camera"
+        android:showAsAction="ifRoom"
+        android:title="@string/newPfromCamera"/>
+    <item
+        android:id="@+id/browser"
+        android:icon="@drawable/collections_collection"
+        android:showAsAction="ifRoom"
+        android:title="@string/newPfromGallery"/>
+    <item
+        android:id="@+id/move"
+        android:icon="@drawable/navigation_forward"
+        android:showAsAction="ifRoom"
+        android:title="@string/moveTitle"/>
+    <item
+        android:id="@+id/helpProduct"
+        android:icon="@drawable/action_help"
+        android:showAsAction="ifRoom"
+        android:title="@string/help"/>
+
 </menu>

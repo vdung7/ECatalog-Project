@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
@@ -11,8 +12,23 @@
         android:layout_weight="2"
         android:gravity="center"
         android:text="@string/MainTitle"
-        android:textSize="50dip"
+        android:textSize="50sp"
         android:textStyle="bold" />
+
+    <com.facebook.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        facebook:confirm_logout="false"
+        facebook:fetch_user_info="true" />
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 
     <GridView
         android:id="@+id/ContentsGridView"

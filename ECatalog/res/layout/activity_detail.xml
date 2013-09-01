@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical" >
 
     <!-- HorizontialListView for images of products -->
@@ -9,17 +10,24 @@
     <view.HorizontialListView
         android:id="@+id/listImgPathView"
         android:layout_width="match_parent"
-        android:layout_height="230dip"
-        android:background="@drawable/border" />
-
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="3dp" />
+    
     <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:id="@+id/scrollDetail"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/border"
+        android:fillViewport="true"
+        android:padding="1dp" >
 
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="5dp"
             android:stretchColumns="1" >
 
             <!-- Row0 : id and codeName -->
@@ -32,6 +40,7 @@
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:textColor="#000000"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -40,6 +49,7 @@
                     android:layout_column="1"
                     android:layout_span="1"
                     android:text="@string/pCodeName"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <EditText
@@ -50,6 +60,7 @@
                     android:layout_span="2"
                     android:enabled="false"
                     android:imeOptions="actionNext"
+                    android:lines="1"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -61,7 +72,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
+                    android:scrollHorizontally="true"
                     android:text="@string/pName"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <EditText
@@ -72,6 +85,8 @@
                     android:layout_span="2"
                     android:enabled="false"
                     android:imeOptions="actionNext"
+                    android:lines="1"
+                    android:scrollHorizontally="true"
                     android:textColor="#000000" />
 
                 <CheckBox
@@ -93,6 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:text="@string/pPrice"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <EditText
@@ -102,7 +118,9 @@
                     android:layout_column="1"
                     android:enabled="false"
                     android:imeOptions="actionNext"
+                    android:lines="1"
                     android:numeric="decimal"
+                    android:scrollHorizontally="true"
                     android:textColor="#000000" />
 
                 <TextView
@@ -110,6 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_column="2"
                     android:text="@string/pQuantity"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <EditText
@@ -119,6 +138,7 @@
                     android:layout_column="3"
                     android:enabled="false"
                     android:imeOptions="actionNext"
+                    android:lines="1"
                     android:numeric="integer"
                     android:textColor="#000000" />
             </TableRow>
@@ -126,10 +146,11 @@
             <!-- Row3 :  Detail -->
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_column="0"
+                android:layout_gravity="left"
                 android:text="@string/pDetail"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -137,7 +158,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
+                android:gravity="top|left"
                 android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
                 android:textColor="#000000" />
 
             <TableRow android:gravity="center" >
@@ -148,15 +171,27 @@
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:enabled="false"
-                    android:text="Edit" />
+                    android:layout_column="0"
+                    android:text="@string/btnEdit" />
 
                 <Button
                     android:id="@+id/pSaveBtn"
+                    android:layout_column="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:enabled="true"
+                    android:text="@string/btnSave" />
+
+                <Button
+                    android:layout_column="2"
+                    android:layout_span="2"
+                    android:id="@+id/pShareBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:enabled="false"
-                    android:text="Save" />
+                    android:text="@string/btnShare" />
             </TableRow>
         </TableLayout>
     </ScrollView>

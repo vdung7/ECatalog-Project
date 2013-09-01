@@ -9,7 +9,7 @@
         android:topRightRadius="7dp" />
 
     <stroke
-        android:width="2dip"
+        android:width="1dip"
         android:color="@android:color/background_dark" >
     </stroke>
 

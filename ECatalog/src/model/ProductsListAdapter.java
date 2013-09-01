@@ -88,7 +88,8 @@ public class ProductsListAdapter extends ArrayAdapter<String>{
 					public void onClick(DialogInterface dialog, int which) {
 						SQLiteHelper sh = new SQLiteHelper(mainAct);
 						sh.removeProduct(getItemId(position));
-						mainAct.onResume();
+						productsList.remove(position);
+						ProductsListAdapter.this.notifyDataSetChanged();
 					}
 				})
 				.setNegativeButton("Cancel", new AlertDialog.OnClickListener() {
@@ -117,7 +118,6 @@ public class ProductsListAdapter extends ArrayAdapter<String>{
 		return convertView;
 	}
 
-	//can't use!!!!!!!!!!!!!!!!!!!!
 	public void moveTo(int pid){
 		for(int i=0; i<productsList.size(); i++)
 			if(productsList.get(i).getPid() == pid){

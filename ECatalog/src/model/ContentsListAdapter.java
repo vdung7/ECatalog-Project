@@ -100,7 +100,8 @@ public class ContentsListAdapter extends ArrayAdapter<String>{
 					public void onClick(DialogInterface dialog, int which) {
 						SQLiteHelper sh = new SQLiteHelper(mainAct);
 						sh.removeContent(getItemId(position));
-						mainAct.onResume();
+						contentsList.remove(position);
+						ContentsListAdapter.this.notifyDataSetChanged();
 					}
 				})
 				.setNegativeButton("Cancel", new AlertDialog.OnClickListener() {
