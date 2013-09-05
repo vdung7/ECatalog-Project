@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/imagePathView"
-        android:layout_width="290dp"
-        android:layout_height="200dp"
+        android:layout_width="320dp"
+        android:layout_height="230dp"
         android:padding="2dp"
         android:scaleType="fitCenter" />
 

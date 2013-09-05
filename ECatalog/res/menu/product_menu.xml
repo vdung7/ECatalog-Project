@@ -3,22 +3,22 @@
     <item
         android:id="@+id/camera"
         android:icon="@drawable/device_access_camera"
-        android:showAsAction="ifRoom"
+        android:showAsAction="always"
         android:title="@string/newPfromCamera"/>
     <item
         android:id="@+id/browser"
         android:icon="@drawable/collections_collection"
-        android:showAsAction="ifRoom"
+        android:showAsAction="always"
         android:title="@string/newPfromGallery"/>
     <item
         android:id="@+id/move"
         android:icon="@drawable/navigation_forward"
-        android:showAsAction="ifRoom"
+        android:showAsAction="always"
         android:title="@string/moveTitle"/>
     <item
         android:id="@+id/helpProduct"
         android:icon="@drawable/action_help"
-        android:showAsAction="ifRoom"
+        android:showAsAction="always"
         android:title="@string/help"/>
 
 </menu>

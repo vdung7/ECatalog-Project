@@ -223,6 +223,13 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 	public void removeContent(long cid) {
 		// if remove a content , products have cid similar will be remove too
 		SQLiteDatabase sd = getWritableDatabase();
+		
+		ArrayList<Product> prodList = getProductsByContent(cid);
+		for (int i = 0; i < prodList.size(); i++) {
+			int pid = prodList.get(i).getPid();
+			sd.execSQL("delete from "+I_TABLE_NAME+" where "+PID+" = "+pid);
+		}
+		
 		sd.execSQL("delete from "+C_TABLE_NAME+" where "+CID+" = "+cid);
 		sd.execSQL("delete from "+P_TABLE_NAME+" where "+CID+" = "+cid);
 	}

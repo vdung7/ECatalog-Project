@@ -194,6 +194,12 @@ public class ProductsListActivity extends ListActivity {
 	}
 
 	@Override
+	protected void onPause() {
+		super.onPause();
+		sh.close();
+	}
+	
+	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		sh.close();

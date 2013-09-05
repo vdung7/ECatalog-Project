@@ -12,14 +12,12 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
@@ -44,6 +42,7 @@ public class MainActivity extends Activity{
 	private ArrayList<Content> contentList = new ArrayList<Content>();
 	private String new_content = "";
 	private GraphUser user;
+	private SQLiteHelper sh;
 	private UiLifecycleHelper uiHelper;
 
 	private Session.StatusCallback callback = new Session.StatusCallback() {
@@ -74,6 +73,8 @@ public class MainActivity extends Activity{
 		loginBtn.setPublishPermissions(PERMISSIONS);
 		loginBtn.setDefaultAudience(SessionDefaultAudience.EVERYONE);
 		
+		
+		
 		getActionBar().setDisplayShowTitleEnabled(false);
 		getActionBar().setDisplayShowHomeEnabled(false);
 	}
@@ -84,7 +85,7 @@ public class MainActivity extends Activity{
 		uiHelper.onResume();
 		updateUI();
 		///connect activity with database and adapter
-		SQLiteHelper sh = new SQLiteHelper(this);
+		sh = new SQLiteHelper(this);
 
 		contentList =  sh.getAllContents();
 		contentListAdapter = new ContentsListAdapter(MainActivity.this, 
@@ -125,7 +126,7 @@ public class MainActivity extends Activity{
 				public void onClick(DialogInterface arg0, int arg1) {
 					new_content = input.getText().toString();
 					if(!new_content.equals("")){
-						SQLiteHelper sh = new SQLiteHelper(getApplicationContext());
+						sh = new SQLiteHelper(getApplicationContext());
 
 						Content newContent = new Content("", new_content); 
 						sh.addContent(newContent);
@@ -203,11 +204,13 @@ public class MainActivity extends Activity{
 	protected void onPause() {
 		super.onPause();
 		uiHelper.onPause();
+		sh.close();
 	}
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		uiHelper.onDestroy();
+		sh.close();
 	}
 }
 

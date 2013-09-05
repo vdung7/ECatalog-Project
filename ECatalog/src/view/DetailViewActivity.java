@@ -391,15 +391,16 @@ public class DetailViewActivity extends Activity{
 			if (!imgFilePathsList.contains(imgFilePath)) {
 				imgFilePathsList.add(imgFilePath);
 				imgListAdapter.notifyDataSetChanged();
+				
+				// if this products not new, update imagePaths table (database)
+				if(pid>0){
+					sh.addImagePath(pid, imgFilePath);
+				}
 			}else{
 				Toast.makeText(getApplicationContext(),
 						R.string.toastDuplicateImage, Toast.LENGTH_LONG).show();
 			}
 
-			// if this products not new, update imagePaths table (database)
-			if(pid>0){
-				sh.addImagePath(pid, imgFilePath);
-			}
 
 		}
 		// if user choose CANCEL option, back to ProductsListActivity
@@ -588,11 +589,13 @@ public class DetailViewActivity extends Activity{
 	protected void onPause() {
 		super.onPause();
 		uiHelper.onPause();
+		sh.close();
 	}
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		uiHelper.onDestroy();
+		sh.close();
 	}
 
 	@Override

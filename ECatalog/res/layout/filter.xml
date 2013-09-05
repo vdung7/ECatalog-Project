@@ -6,36 +6,43 @@
     android:orientation="horizontal" >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scrollHorizontally="true"
         android:text="@string/txtPrice"
         android:textSize="15sp" />
 
     <EditText
         android:id="@+id/from"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:hint="@string/hintFrom"
         android:inputType="number" />
 
     <EditText
         android:id="@+id/to"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:hint="@string/hintTo"
-        android:inputType="number" />
+        android:inputType="number"
+        android:scrollHorizontally="true" />
 
     <ImageButton
         android:id="@+id/filterBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:contentDescription="@string/desFilterButton"
         android:src="@drawable/action_search" />
 
     <Button
         android:id="@+id/allBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="@string/txtAllBtn" />
 
 </LinearLayout>
