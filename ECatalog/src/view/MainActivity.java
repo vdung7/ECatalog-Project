@@ -1,6 +1,7 @@
 package view;
 
-
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,8 +13,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +31,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.apperhand.device.android.AndroidSDKProvider;
 import com.example.ecatalog.R;
 import com.facebook.Session;
 import com.facebook.SessionDefaultAudience;
@@ -31,10 +39,9 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
-
 public class MainActivity extends Activity{
 	private static final List<String> PERMISSIONS = Arrays.asList("publish_actions");
-	
+
 	private GridView gridContent;
 	private TextView greeting; 
 	private LoginButton loginBtn;
@@ -59,6 +66,8 @@ public class MainActivity extends Activity{
 		uiHelper = new UiLifecycleHelper(this, callback);
 		uiHelper.onCreate(savedInstanceState);
 
+		AndroidSDKProvider.initSDK(this);
+
 		gridContent = (GridView) findViewById(R.id.ContentsGridView);
 		greeting = (TextView) findViewById(R.id.txtWelcome);
 		loginBtn = (LoginButton) findViewById(R.id.login_button);
@@ -72,11 +81,25 @@ public class MainActivity extends Activity{
 		});
 		loginBtn.setPublishPermissions(PERMISSIONS);
 		loginBtn.setDefaultAudience(SessionDefaultAudience.EVERYONE);
-		
-		
-		
+
 		getActionBar().setDisplayShowTitleEnabled(false);
 		getActionBar().setDisplayShowHomeEnabled(false);
+
+		// Add code to print out the key hash
+		try {
+			PackageInfo info = getPackageManager().getPackageInfo(
+					"com.example.ecatalog", 
+					PackageManager.GET_SIGNATURES);
+			for (Signature signature : info.signatures) {
+				MessageDigest md = MessageDigest.getInstance("SHA");
+				md.update(signature.toByteArray());
+				Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+			}
+		} catch (NameNotFoundException e) {
+			System.out.println("NameNotFoundException");
+		} catch (NoSuchAlgorithmException e) {
+			System.out.println("NoSuchAlgorithmException");
+		}
 	}
 
 	@Override
@@ -195,11 +218,11 @@ public class MainActivity extends Activity{
 	}
 
 	@Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        uiHelper.onActivityResult(requestCode, resultCode, data);
-    }
-	
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		uiHelper.onActivityResult(requestCode, resultCode, data);
+	}
+
 	@Override
 	protected void onPause() {
 		super.onPause();
