@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_column="3"
                     android:clickable="false"
-                    android:text="is Hot"
+                    android:text="Hot"
                     android:textStyle="bold" />
             </TableRow>
 

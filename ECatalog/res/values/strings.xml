@@ -4,77 +4,90 @@
     <string name="app_name">ECatalog</string>
     <string name="app_id">156569111214806</string>
     <string name="action_settings">Settings</string>
-    <string name="addMenuItem">New Product</string>
-    <string name="addMenuItem2">New Content</string>
-    <string name="help">Help</string>
-    <string name="about">About</string>
-    <string name="addImgCameraMenuItem">Add IMG from Camera</string>
-    <string name="addImgGalleryMenuItem">Add IMG from Gallery</string>
+    <string name="addMenuItem">Sản Phẩm mới</string>
+    <string name="addMenuItem2">Nhãn mới</string>
+    <string name="help">Trợ giúp</string>
+    <string name="about">Thông Tin</string>
+    <string name="addImgCameraMenuItem">Chụp thêm hình</string>
+    <string name="addImgGalleryMenuItem">Chọn thêm hình</string>
     <string name="hello_user">User: </string>
+
+    <!-- error -->
+    <string name="illegalValue">Làm ơn nhập một số</string>
+    <string name="pNotFound">Không tìm thấy sản phẩm</string>
 
     <!-- main title -->
     <string name="MainTitle">ECATALOG</string>
     <string name="subInMainTitle">for Manager</string>
 
     <!-- in delete dialog -->
-    <string name="titleDeleteDialog">Delete Confirm</string>
-    <string name="messageDeleteProductDialog">This product will be removed. Are you sure?</string>
-    <string name="messageDeleteContentDialog">This content will be removed. Are you sure?</string>
-    <string name="messageDeleteImgDialog">This image will be removed. Are you sure?</string>
+    <string name="titleDeleteDialog">Xác nhận</string>
+    <string name="messageDeleteProductDialog">Sản phẩm này sẽ bị xóa. Bạn có chắc chắn </string>
+    <string name="messageDeleteContentDialog">Toàn bộ nhãn này sẽ bị xóa. Bạn có chắc chắn muốn thực hiện điều này?</string>
+    <string name="messageDeleteImgDialog">Hình ảnh này sẽ bị xóa khỏi sản phẩm</string>
+
+    <!-- in contentList -->
+    <string name="addContentDiaTitle">Thêm nhãn</string>
+    <string name="hintNewContent">Nhập tên nhãn mới</string>
+    <string name="addContentSuccess">Nhãn mới đã được thêm</string>
 
     <!-- in detail view -->
-    <string name="toastSaveProduct">Your product has been saved</string>
-    <string name="toastIllegalValues">Name and Price fields must be enter!</string>
-    <string name="toastIllegalImage">You cannot remove all images of this product!</string>
-    <string name="toastDuplicateImage">Image chosen is duplicate!</string>
+    <string name="toastSaveProduct">Sản phẩm của bạn đã được lưu</string>
+    <string name="toastIllegalValues">Sản phẩm phải có tên và giá!</string>
+    <string name="toastIllegalImage">Bạn không thể xóa hết tất cả hình của một sản phẩm!</string>
+    <string name="toastDuplicateImage">Hình được chọn bị trùng</string>
     <string name="pID">ID:</string>
-    <string name="pCodeName">Code Name:</string>
-    <string name="pName">Name:</string>
-    <string name="pPrice">Price:</string>
-    <string name="pQuantity">Quantity:</string>
-    <string name="pDetail">Detail:</string>
-    <string name="btnEdit">Edit</string>
-    <string name="btnSave">Save</string>
-    <string name="btnShare">Share to Facebook</string>
-    <string name="success">Success</string>
-    <string name="successfully_posted_post">Successfully posted \'%1$s\'.\nPost ID: %2$s</string>
-    <string name="photo_post">Photo Post</string>
+    <string name="pCodeName">Mã:</string>
+    <string name="pName">Tên SP:</string>
+    <string name="pPrice">Giá:</string>
+    <string name="pQuantity">Số lượng:</string>
+    <string name="pDetail">Chi tiết:</string>
+    <string name="btnEdit">Sửa</string>
+    <string name="btnSave">Lưu</string>
+    <string name="btnShare">Chia sẻ Facebook</string>
+    <string name="success">Thành Công</string>
+    <string name="successfully_posted_post">Post thành công hình ảnh \'%1$s\'.\nPost ID: %2$s</string>
+    <string name="photo_post">Post Hình ảnh</string>
     <string name="error">Error</string>
     <string name="cancelled">Cancelled</string>
     <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>
 
+    <!-- in productList -->
+    <string name="findByID">Tìm theo ID</string>
+
     <!-- in product_menu -->
-    <string name="desFilterButton">Filter</string>
-    <string name="hintFrom">from</string>
-    <string name="hintTo">to</string>
+    <string name="desFilterButton">Trích lọc</string>
+    <string name="hintFrom">từ</string>
+    <string name="hintTo">tới</string>
     <string name="txtAllBtn">All</string>
-    <string name="txtPrice">Price: </string>
-    <string name="moveTitle">Move by ID</string>
-    <string name="newPfromCamera">New Product from Camera</string>
-    <string name="newPfromGallery">New Product from Gallery</string>
+    <string name="txtPrice">Giá: </string>
+    <string name="moveTitle">Tìm ID</string>
+    <string name="newPfromCamera">Tạo SP mới từ Camera</string>
+    <string name="newPfromGallery">Tạo SP mới từ Gallery</string>
 
     <!-- in help dialog 1 [Contents List] -->
-    <string name="helpInContent">Click this button for adding new Content:</string>
-    <string name="helpInContent2">        Long click on a Content to delete it.\n
-        After input New Contents Name, click this Empty Box for either adding or view products in New Content:</string>
+    <string name="helpInContent">Click nút này để thêm nhãn mới:</string>
+    <string name="helpInContent2">        Nhấn và giữ trên một nhãn để xóa\n
+        Sau khi nhập tên nhãn, Click vào hình cái hộp để chọn nhãn</string>
 
     <!-- in help dialog 2 [Products List] -->
-    <string name="helpInProduct">Click this button for adding New Product from Camera:</string>
-    <string name="helpInProduct2">Click this button for adding New Product from Gallery:</string>
-    <string name="helpInProduct3">Click this button for finding a Product by ID:</string>
-    <string name="helpInProduct4">        Click on a Product to see detail info.\n
-        Long click on a Product to delete it.\n
-        You can use Filter to filtrate products have price between [from] and [to]</string>
+    <string name="helpInProduct">Click nút này để thêm hình mới từ camera</string>
+    <string name="helpInProduct2">Click nút này để thêm hình mới từ Gallery:</string>
+    <string name="helpInProduct3">Click nút này để  tìm 1 SP theo ID</string>
+    <string name="helpInProduct4">        Click vào SP để xem chi tiết\n
+        Nhấn và giữ vào hình của một SP để xóa nó.\n
+        Bạn có thể dùng bộ lọc để lọc các SP theo giá</string>
 
     <!-- in help dialog 3 [Detail Info] -->
-    <string name="helpInDetail">You can add more Images of this Product from either Camera or Gallery</string>
-    <string name="helpInDetail2">        Click on an Image to delete it.\n
-        If you want to edit info of this product, you can use [Edit] button to unlock\n
-        And [Save] button to Update</string>
+    <string name="helpInDetail">Bạn có thể thêm hình ảnh cho SP này bằng 2 nút</string>
+    <string name="helpInDetail2">        Click chọn 1 ảnh để xóa nó\n
+        Dùng nút [Sửa] để mở khóa.\n
+        Dùng nút [Lưu] để cập nhật thông tin</string>
 
     <!-- about -->
     <string name="aboutAppName">ECATALOG ver 3.0</string>
-    <string name="aboutContact">        Built and Developed by CyberSoft Team\n
-        Please contact email : vietdung175@yahoo.com</string>
+    <string name="aboutContact">        Phát triển bởi CyberSoft Team\n
+       Mọi ý kiến đóng góp xin gửi về email :\n
+       vietdung175@yahoo.com</string>
 
 </resources>

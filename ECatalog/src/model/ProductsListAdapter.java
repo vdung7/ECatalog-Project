@@ -110,9 +110,9 @@ public class ProductsListAdapter extends ArrayAdapter<String>{
 		TextView tv = (TextView) convertView.findViewById(R.id.textProduct);
 		tv.setText( "ID: "+productsList.get(position).getPid()+
 					"\n"+
-					"Name: "+productsList.get(position).getName()+
+					mainAct.getString(R.string.pName)+" "+productsList.get(position).getName()+
 					"\n"+
-					"$"+productsList.get(position).getPrice());
+					mainAct.getString(R.string.pPrice)+" "+productsList.get(position).getPrice());
 		
 		
 		return convertView;
@@ -124,6 +124,6 @@ public class ProductsListAdapter extends ArrayAdapter<String>{
 				mainAct.getListView().setSelection(i );
 				return;
 			}
-		Toast.makeText(mainAct, "Products not found", Toast.LENGTH_LONG).show();		
+		Toast.makeText(mainAct, mainAct.getString(R.string.pNotFound), Toast.LENGTH_LONG).show();		
 	}
 }

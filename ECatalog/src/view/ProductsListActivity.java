@@ -121,7 +121,7 @@ public class ProductsListActivity extends ListActivity {
 		case R.id.move: {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-			builder.setTitle("Find by ID");
+			builder.setTitle(getString(R.string.findByID));
 			final EditText input = new EditText(this);
 			input.setHint("ID");
 			input.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -136,7 +136,7 @@ public class ProductsListActivity extends ListActivity {
 						((ProductsListAdapter)getListAdapter()).moveTo(id);
 					} catch (NumberFormatException e) {
 						Toast.makeText(getApplicationContext(),
-								"Please input a number", Toast.LENGTH_LONG).show();
+								getString(R.string.illegalValue), Toast.LENGTH_LONG).show();
 					}
 				}
 			});

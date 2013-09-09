@@ -138,9 +138,9 @@ public class MainActivity extends Activity{
 		case R.id.addContent: {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-			builder.setTitle("Input new Content");
+			builder.setTitle(getString(R.string.addContentDiaTitle));
 			final EditText input = new EditText(this);
-			input.setHint("Name of new Content");
+			input.setHint(getString(R.string.hintNewContent));
 			input.setInputType(InputType.TYPE_CLASS_TEXT);
 			builder.setView(input);
 
@@ -157,7 +157,7 @@ public class MainActivity extends Activity{
 						contentListAdapter.notifyDataSetChanged();
 
 						Toast.makeText(getApplicationContext(), 
-								"New Content has been created", Toast.LENGTH_LONG).show();
+								getString(R.string.addContentSuccess), Toast.LENGTH_LONG).show();
 						onResume();
 					}
 
