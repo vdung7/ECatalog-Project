@@ -31,7 +31,6 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.apperhand.device.android.AndroidSDKProvider;
 import com.example.ecatalog.R;
 import com.facebook.Session;
 import com.facebook.SessionDefaultAudience;
@@ -39,6 +38,8 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
+import com.searchboxsdk.android.StartAppSearch;
+import com.startapp.android.publish.StartAppAd;
 public class MainActivity extends Activity{
 	private static final List<String> PERMISSIONS = Arrays.asList("publish_actions");
 
@@ -51,6 +52,9 @@ public class MainActivity extends Activity{
 	private GraphUser user;
 	private SQLiteHelper sh;
 	private UiLifecycleHelper uiHelper;
+
+	// advertisement part
+	private StartAppAd startAppAd = new StartAppAd(this);
 
 	private Session.StatusCallback callback = new Session.StatusCallback() {
 		@Override
@@ -66,7 +70,9 @@ public class MainActivity extends Activity{
 		uiHelper = new UiLifecycleHelper(this, callback);
 		uiHelper.onCreate(savedInstanceState);
 
-		AndroidSDKProvider.initSDK(this);
+		// for advertisements
+		StartAppSearch.init(this);
+		StartAppSearch.showSearchBox(this);
 
 		gridContent = (GridView) findViewById(R.id.ContentsGridView);
 		greeting = (TextView) findViewById(R.id.txtWelcome);
@@ -106,6 +112,10 @@ public class MainActivity extends Activity{
 	public void onResume() {
 		super.onResume();
 		uiHelper.onResume();
+
+		// for advertisement 
+		startAppAd.onResume();
+
 		updateUI();
 		///connect activity with database and adapter
 		sh = new SQLiteHelper(this);
@@ -228,6 +238,11 @@ public class MainActivity extends Activity{
 		super.onPause();
 		uiHelper.onPause();
 		sh.close();
+	}
+	@Override
+	public void onBackPressed() {
+		startAppAd.onBackPressed();
+		super.onBackPressed();
 	}
 	@Override
 	protected void onDestroy() {
