@@ -31,7 +31,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ecatalog.R;
+import cyber.app.ecatalog.R;
 import com.facebook.Session;
 import com.facebook.SessionDefaultAudience;
 import com.facebook.SessionState;

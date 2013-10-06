@@ -7,7 +7,7 @@ import view.DetailViewActivity;
 import view.MainActivity;
 import view.ProductsListActivity;
 
-import com.example.ecatalog.R;
+import cyber.app.ecatalog.R;
 
 import android.app.AlertDialog;
 import android.content.Context;

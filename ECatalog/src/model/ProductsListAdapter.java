@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import view.DetailViewActivity;
 import view.ProductsListActivity;
 
-import com.example.ecatalog.R;
+import cyber.app.ecatalog.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;

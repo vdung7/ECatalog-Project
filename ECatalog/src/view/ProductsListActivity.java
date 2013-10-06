@@ -7,7 +7,7 @@ import model.Product;
 import model.ProductsListAdapter;
 import model.SQLiteHelper;
 
-import com.example.ecatalog.R;
+import cyber.app.ecatalog.R;
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.ActionBar;
